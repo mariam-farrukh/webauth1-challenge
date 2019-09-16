@@ -9,8 +9,8 @@ router.get("/", (req, res) => {
   res.status(200).json({ session: req.session });
 });
 
-// router.get("/users", restricted, (req, res) => {
-router.get("/users", (req, res) => {
+router.get("/users", restricted, (req, res) => {
+// router.get("/users", (req, res) => {
     Users.getUsers()
       .then(users => {
         res.status(200).json(users);
